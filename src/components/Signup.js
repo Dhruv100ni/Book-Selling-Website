@@ -13,8 +13,11 @@ const Signup = () => {
                         <form className='register-form' id = 'register-from'>
                             <div className='form-group'>
                                 <label htmlFor='name'>
-                                <i class="zmdi zmdi-account"></i>
+                                    <i class="zmdi zmdi-account material-icons-name"></i>
                                 </label>
+                                <input type="text" name = "name" id ="name" autoComplete='off'
+                                    placeholder='Your Name'
+                                />
                             </div>
                         </form>
                     </div>
