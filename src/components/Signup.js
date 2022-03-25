@@ -10,10 +10,12 @@ const Signup = () => {
         <section className='signup'>
             <div className='container mt-5'>
                 <div className='signup-content'>
+                <form className ="signup_form">
+                <img src='https://images.unsplash.com/photo-1584801096196-592feb269e31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' width="400" height="300" alt=''></img>
                     <div className='signup-from'>
                         {/* Adding sign up page */}
                         <h2 className='form-title'>Sign Up</h2>
-                        <form className='register-form' id = 'register-from'>
+                        <form className='register-form' id = 'register-form'>
                             <div className='form-group'>
                                 <label htmlFor='name'>
                                     <i class="zmdi zmdi-account material-icons-name"></i>
@@ -63,6 +65,7 @@ const Signup = () => {
                             
                         </form>
                     </div>
+                    </form>
                 </div>
             </div>
 
