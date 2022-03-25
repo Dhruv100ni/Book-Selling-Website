@@ -1,5 +1,8 @@
 import React from 'react';
 import '../Images/img.jpg';
+import TextField from '@mui/material/TextField';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
 
 const Signup = () => {
     return(
@@ -15,60 +18,46 @@ const Signup = () => {
                                 <label htmlFor='name'>
                                     <i class="zmdi zmdi-account material-icons-name"></i>
                                 </label>
-                                <input type="text" name = "name" id ="name" autoComplete='off'
-                                    placeholder='Your Name'
-                                />
+                                <TextField id="input-with-sx" label="Your Name" variant="standard" />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='email'>
                                     <i class="zmdi zmdi-email material-icons-name"></i>
                                 </label>
-                                <input type="email" name = "email" id ="email" autoComplete='off'
-                                    placeholder='Your Email'
-                                />
+                                <TextField id="standard-basic" label="Your Email" variant="standard" />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='phone'>
                                     <i class="zmdi zmdi-phone-in-talk material-icons-name"></i>
                                 </label>
-                                <input type="text" name = "phone" id = "phone" autoComplete='off'
-                                    placeholder='Your Phone Number'
-                                />
+                                <TextField id="standard-basic" label="Your Phone Number" variant="standard" />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='work'>
                                     <i class="zmdi zmdi-slideshow material-icons-name"></i>
                                 </label>
-                                <input type="text" name = "work" id ="work" autoComplete='off'
-                                    placeholder='Your Profession'
-                                />
+                                <TextField id="standard-basic" label="Your Profession" variant="standard" />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='password'>
                                     <i class="zmdi zmdi-lock material-icons-name"></i>
                                 </label>
-                                <input type="password" name = "password" id ="password" autoComplete='off'
-                                    placeholder='Your Password'
-                                />
+                                <TextField id="standard-basic" label="Your Passowrd" variant="standard" />
                             </div> 
 
                             <div className='form-group'>
                                 <label htmlFor='cpassword'>
                                     <i class="zmdi zmdi-lock material-icons-name"></i>
                                 </label>
-                                <input type="password" name = "cpassword" id ="cpassword" autoComplete='off'
-                                    placeholder='Your Confirm Password'
-                                />
-                            </div> 
+                                <TextField id="standard-basic" label="Your Confirm password" variant="standard" />
+                            </div> <br/>
 
                             <div className='form-group form-button'>
-                                <input type="submit" name = "signup" id ="signup" className='form-submit'
-                                    value='Register'
-                                />
+                            <Button variant="contained">Register</Button>
                             </div>
 
                             
