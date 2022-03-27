@@ -12,6 +12,7 @@ const Signup = () => {
                 <div className='signup-content'>
                 <form className ="signup_form">
                 <img src='https://images.unsplash.com/photo-1584801096196-592feb269e31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80' width="400" height="300" alt=''></img>
+                {/* <NavLink to = "/signin" className = "signin-image-link">Create an Account</NavLink>  */}
                     <div className='signup-from'>
                         {/* Adding sign up page */}
                         <h2 className='form-title'>Sign Up</h2>
@@ -59,7 +60,7 @@ const Signup = () => {
                             </div> <br/>
 
                             <div className='form-group form-button'>
-                            <Button variant="contained">Register</Button>
+                                <Button variant="contained">Register</Button>
                             </div>
 
                             
