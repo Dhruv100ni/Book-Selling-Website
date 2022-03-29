@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import './Signup';
 
 
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
                     <div className='signin-from'>
                         {/* Adding sign up page */}
                         <h2 className='form-title'>Sign In</h2>
+                        <h4 className='need_account'>Need an account? <NavLink to = "./Signup" className = "signup-image-link">SignUp</NavLink></h4>
                         <form className='register-form' id = 'register-form'>
                             <div className='form-group'>
                                 <label htmlFor='email'>
