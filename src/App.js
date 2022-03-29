@@ -22,7 +22,7 @@ function App() {
         }
 
         {
-          <Route exact path="/" component={Signup} />
+          <Route exact path="/signup" component={Signup} />
         }
 
         {
