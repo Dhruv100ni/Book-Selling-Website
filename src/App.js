@@ -9,16 +9,27 @@ import Shopping_Cart from './components/Shopping_Cart';
 import Wish_List from './components/Wish_List';
 import My_Account from './components/My_Account';
 import Contac from './components/Contac';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
 
 function App() {
   return (
     <>
     {/* <Router> */}
     <Router>
+      <Navbar />
       
       <Switch>
         {
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Home} />
+        }
+
+        {
+          <Route exact path="/Login" component={Login} />
+        }
+
+        {
+          <Route exact path="/Navbar" component={Navbar} />
         }
 
         {

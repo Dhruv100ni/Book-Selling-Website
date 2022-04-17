@@ -3,6 +3,7 @@ import '../Images/img.jpg';
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
 
 const Signup = () => {
     return(
@@ -62,6 +63,8 @@ const Signup = () => {
                             <div className='form-group form-button'>
                                 <Button variant="contained">Register</Button>
                             </div>
+
+                            <h4 className='register_to_login'>Already have an account? <NavLink to = "./Login" className = "login-image-link">Log In</NavLink></h4>
 
                             
                         </form>
