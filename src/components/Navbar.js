@@ -6,6 +6,7 @@ import {  } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faTimes, faBook} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './Signup.js';
 
 
@@ -51,7 +52,7 @@ function Navbar() {
               <Link
                 to='/services'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={closeMobileMenu} 
               >
                 Services
               </Link>

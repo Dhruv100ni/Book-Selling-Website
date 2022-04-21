@@ -4,6 +4,7 @@ import { Button } from './components/Button'
 import './Footer.css'
 import {faBook} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFacebookF, faInstagram, faYoutube, faTwitter, faLinkedin  } from '@fortawesome/free-brands-svg-icons'
 
 function Footer() {
     return (
@@ -66,8 +67,8 @@ function Footer() {
           <div class='social-media-wrap'>
             <div class='footer-logo'>
               <Link to='/' className='social-logo'>
-                Book Store
-                <i class='fab fa-typo3' />
+              Book Store &nbsp;
+            <FontAwesomeIcon icon={faBook} />
               </Link>
             </div>
             <small class='website-rights'>Book Store © 2022</small>
@@ -78,7 +79,7 @@ function Footer() {
                 target='_blank'
                 aria-label='Facebook'
               >
-                <i class='fab fa-facebook-f' />
+                <FontAwesomeIcon icon={faFacebookF} />
               </Link>
               <Link
                 class='social-icon-link instagram'
@@ -86,7 +87,7 @@ function Footer() {
                 target='_blank'
                 aria-label='Instagram'
               >
-                <i class='fab fa-instagram' />
+                <FontAwesomeIcon icon={faInstagram} />
               </Link>
               <Link
                 class='social-icon-link youtube'
@@ -94,7 +95,7 @@ function Footer() {
                 target='_blank'
                 aria-label='Youtube'
               >
-                <i class='fab fa-youtube' />
+                <FontAwesomeIcon icon={faYoutube} />
               </Link>
               <Link
                 class='social-icon-link twitter'
@@ -102,7 +103,7 @@ function Footer() {
                 target='_blank'
                 aria-label='Twitter'
               >
-                <i class='fab fa-twitter' />
+                <FontAwesomeIcon icon={faTwitter} />
               </Link>
               <Link
                 class='social-icon-link twitter'
@@ -110,7 +111,7 @@ function Footer() {
                 target='_blank'
                 aria-label='LinkedIn'
               >
-                <i class='fab fa-linkedin' />
+                <FontAwesomeIcon icon={faLinkedin} />
               </Link>
             </div>
           </div>
