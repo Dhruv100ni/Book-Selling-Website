@@ -1,51 +1,77 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import CardsItem from './CardItem'
 import './Cards.css'
 
-function Cards() {
-  return (
-    <div className='cards'>
-        <h1>Check out the books</h1>
-        <div className='cards__container'>
-            <div className='cards__wrapper'>
-                <ul className='cards__items'>
-                    <CardsItem 
-                        src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/79bb74658314f64c7facd8ba10d6e62e5b4ba7ec218320e9151eae9dea6d8c24._UY500_UX667_RI_V_TTW_.jpg'
-                        text='Beauty And The Beast written by Maurice Sendak'
-                        label='Book 1'
-                        path='./Category.js'
-                    />&nbsp;&nbsp;
-                    <CardsItem 
-                        src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/79bb74658314f64c7facd8ba10d6e62e5b4ba7ec218320e9151eae9dea6d8c24._UY500_UX667_RI_V_TTW_.jpg'
-                        text='Beauty And The Beast written by Maurice Sendak'
-                        label='Book 2'
-                        path='./Category.js'
-                    />
-                </ul>
-                <ul className='cards__items'>
-                    <CardsItem 
-                        src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/79bb74658314f64c7facd8ba10d6e62e5b4ba7ec218320e9151eae9dea6d8c24._UY500_UX667_RI_V_TTW_.jpg'
-                        text='Beauty And The Beast written by Maurice Sendak'
-                        label='Book 3'
-                        path='./Category.js'
-                    />
-                    <CardsItem 
-                        src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/79bb74658314f64c7facd8ba10d6e62e5b4ba7ec218320e9151eae9dea6d8c24._UY500_UX667_RI_V_TTW_.jpg'
-                        text='Beauty And The Beast written by Maurice Sendak'
-                        label='Book 4'
-                        path='./Category.js'
-                    />
-                    <CardsItem 
-                        src='https://images-na.ssl-images-amazon.com/images/S/pv-target-images/79bb74658314f64c7facd8ba10d6e62e5b4ba7ec218320e9151eae9dea6d8c24._UY500_UX667_RI_V_TTW_.jpg'
-                        text='Beauty And The Beast written by Maurice Sendak'
-                        label='Book 5'
-                        path='./Category.js'
-                    />
-                </ul>
+const Cards = () => {
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState(data);
+    const [loading, setLoading] = useState(false);
+    let componentMounted = true;
+
+    useEffect(() => {
+        const getProducts = async () => {
+            setLoading(true);
+            const response = await fetch('https://fake-book-api.herokuapp.com/products');
+            if (componentMounted) {
+                setData(await response.clone().json());
+                setFilter(await response.json());
+                setLoading(false);
+                console.log(filter);
+            }
+
+            return () => {
+                componentMounted = false;
+
+            }
+        }
+
+        getProducts();
+    }    , []);
+
+    const Loading= () => {
+        return(
+            <>
+                Loading...
+            </>
+        )
+    }
+
+    const ShowProducts = () => {
+
+        return (
+            <>
+                <div className='buttons'>
+                <button className='btn btn-outline-dark'>
+                    All
+                </button>
+                <button className='btn btn-outline-dark'>
+                    Trending
+                </button>
+                <button className='btn btn-outline-dark'>
+                    Best Seller
+                </button>
+            </div>
+            </>
+        )
+        
+    }
+
+    return(
+        <div>
+            <div className="container my-5 py-5">
+                <div className="row">
+                    <div className="col-12 mb-5">
+                        <h1 className='display-6 fw-bolder text-center'>Latest Books</h1>
+                        <hr />                       
+                    </div>
+                </div>
+
+                <div className='row justify-content-center'>
+                    {loading ? <Loading/> : <ShowProducts/>}
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Cards
