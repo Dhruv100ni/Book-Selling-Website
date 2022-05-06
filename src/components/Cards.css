@@ -1,10 +1,24 @@
-/* .cards {
+.cards {
     padding: 4rem;
     background: #fff;
   }
+
+.container{
+  background: rgb(255 254 251);
+}
   
   h1 {
     text-align: center;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .btn{
+    margin: 5px;
   }
   
   .cards__container {
@@ -118,4 +132,4 @@
     .cards__item {
       margin-bottom: 2rem;
     }
-  } */
+  }

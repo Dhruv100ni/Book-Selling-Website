@@ -1,0 +1,25 @@
+
+    [
+        {
+            "title": "The Design of EveryDay Things",
+            "cost": "$22.00",
+            "writer": "Don Norman",
+            "publisher": "Random House",
+            "detail": ""
+        },
+        {
+            "title": "The Most Human Human",
+            "cost": "$22.00",
+            "writer": "Brian Christian",
+            "publisher": "Random House",
+            "detail": ""
+        },
+        {
+            "title": "The Book of Trees",
+            "cost": "$22.00",
+            "writer": "Craig Anderson",
+            "publisher": "Random House",
+            "detail": ""
+        }
+    ]
+

@@ -7,7 +7,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faTimes, faBook} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import './Signup.js';
+import Signup from './Signup.js'
+
 
 
 function Navbar() {
@@ -77,7 +78,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {button && <Button buttonStyle='btn--outline' onClick={<Signup/>}>SIGN UP</Button>}
 
           
         </div>

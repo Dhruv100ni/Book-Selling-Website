@@ -23,14 +23,14 @@ const Login = () => {
                         <form className='register-form' id = 'register-form'>
                             <div className='form-group'>
                                 <label htmlFor='email'>
-                                    <i class="zmdi zmdi-email material-icons-name"></i>
+                                    <i className="zmdi zmdi-email material-icons-name"></i>
                                 </label>
                                 <TextField id="standard-basic" label="Your Email" variant="standard" />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='password'>
-                                    <i class="zmdi zmdi-lock material-icons-name"></i>
+                                    <i className="zmdi zmdi-lock material-icons-name"></i>
                                 </label>
                                 <TextField id="standard-basic" label="Your Passowrd" variant="standard" />
                             </div>  <br/>
