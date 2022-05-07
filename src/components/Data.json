@@ -1,25 +1,28 @@
-
-    [
-        {
-            "title": "The Design of EveryDay Things",
-            "cost": "$22.00",
-            "writer": "Don Norman",
-            "publisher": "Random House",
-            "detail": ""
-        },
-        {
-            "title": "The Most Human Human",
-            "cost": "$22.00",
-            "writer": "Brian Christian",
-            "publisher": "Random House",
-            "detail": ""
-        },
-        {
-            "title": "The Book of Trees",
-            "cost": "$22.00",
-            "writer": "Craig Anderson",
-            "publisher": "Random House",
-            "detail": ""
-        }
-    ]
-
+[
+  {
+    "image_desc": "https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/02/attachment_80012299-e1488216745534.jpg?auto=format&q=60&fit=max&w=930",
+    "title": "The Design of EveryDay Things",
+    "cost": "$22.00",
+    "writer": "Nelle Lewis",
+    "publisher": "Goodreads",
+    "detail": "Clueless In Cleveland by Nelle Lewis is an entertaining and delightful sleuth mystery.",
+    "category": null
+  },
+  {
+    "image_desc":"https://i.pinimg.com/736x/66/df/f8/66dff881ac40ff904cb466f7af7c43a7--sherlock-holmes-book-covers.jpg",
+    "title": "Adventure of Sherlock Holmes",
+    "cost": "$25.00",
+    "writer": "Arthur Conan Doyle",
+    "publisher": "George Newness",
+    "detail": "This is a story that reveals the sinister plot of a greedy stepfather, Dr. Roylott, who kills one of his two stepdaughters and then attempts to kill the other. ",
+    "category": "best_seller"
+  },
+  {
+    "title": "The Book of Trees",
+    "cost": "$22.00",
+    "writer": "Craig Anderson",
+    "publisher": "Random House",
+    "detail": "",
+    "category": "trending"
+  }
+]

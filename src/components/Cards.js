@@ -8,11 +8,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import bookdata from './Data.json'
+import Category from './Category';
 
 const Cards = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
+    const [Category, setCategory] = useState("all");
     let componentMounted = true;
 
     useEffect(() => {
@@ -37,6 +39,8 @@ const Cards = () => {
         getProducts();
     }, []);
 
+    
+
     const Loading = () => {
         return (
             <>
@@ -50,13 +54,25 @@ const Cards = () => {
         return (
 
             <div className='buttons'>
-                <button className='btn btn-outline-dark mr-2'>
+                <button className='btn_cat btn-outline-dark mr-2' onClick={
+                    () => {
+                        setCategory("all");
+                    }
+                }>
                     All
                 </button>
-                <button className='btn btn-outline-dark'>
+                <button className='btn_cat btn-outline-dark' onClick={
+                    () => {
+                        setCategory("trending");
+                    }
+                }>
                     Trending
                 </button>
-                <button className='btn btn-outline-dark'>
+                <button className='btn_cat btn-outline-dark' onClick={
+                    () => {
+                        setCategory("best_seller");
+                    }
+                }>
                     Best Seller
                 </button>
             </div>
@@ -66,21 +82,25 @@ const Cards = () => {
     }
 
     const ShowCards = () => {
+        if (Category === "all") {
+
         return (
-            <>
+            <div className='card_container'>
             
                 {
                     bookdata.map(item => (
                         
                         <Card sx={{ maxWidth: 345 }} >
                         {console.log(item)}
+                            
+                            <CardContent>
                             <CardMedia
                                 component="img"
                                 alt="green iguana"
                                 height="140"
-                                image="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                                style={{marginBottom: '10px'}}
+                                image={item.image_desc}
                             />
-                            <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
                                     {item.title}
                                 </Typography>
@@ -104,9 +124,104 @@ const Cards = () => {
                         </Card>
                     ))
                 }
+                
 
-            </>
-        );
+            </div>
+        ); }
+        else if (Category === "trending") {
+            return (
+                <div className='card_container'>
+                
+                    {
+                        bookdata.map(item => (
+                            
+                            item.category === "trending" && (
+                            <Card sx={{ maxWidth: 345 }} >
+                            {console.log(item)}
+                                
+                                <CardContent>
+                                <CardMedia
+                                    component="img"
+                                    alt="green iguana"
+                                    height="140"
+                                    style={{marginBottom: '10px'}}
+                                    image={item.image_desc}
+                                />
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {item.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {item.cost}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {item.writer}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {item.publisher}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {item.detail}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Button size="small">Buy</Button>
+                                    <Button size="small">Details</Button>
+                                </CardActions>
+                            </Card>
+                        )
+                        ))
+                    }
+                    
+    
+                </div>
+            ); }
+            else if (Category === "best_seller") {
+                return (
+                    <div className='card_container'>
+                    
+                        {
+                            bookdata.map(item => (
+                                
+                                item.category === "best_seller" && (
+                                <Card sx={{ maxWidth: 345 }} >
+                                {console.log(item)}
+                                    
+                                    <CardContent>
+                                    <CardMedia
+                                        component="img"
+                                        alt="green iguana"
+                                        height="140"
+                                        style={{marginBottom: '10px'}}
+                                        image={item.image_desc}
+                                    />
+                                        <Typography gutterBottom variant="h5" component="div">
+                                            {item.title}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {item.cost}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {item.writer}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {item.publisher}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {item.detail}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button size="small">Buy</Button>
+                                        <Button size="small">Details</Button>
+                                    </CardActions>
+                                </Card>
+                            )
+                            ))
+                        }
+                        
+        
+                    </div>
+                ); }
 
     }
 
@@ -122,12 +237,12 @@ const Cards = () => {
     //     )
     // }
     return (
-        <div>
+        <div className='cards_div'>
             <div className="container my-5 py-5" style={{ paddingBottom: "10px" }}>
-                <div className="row">
+                <div className="heading_div">
                     <div className="col-12 mb-5">
-                        <h1 className='display-6 fw-bolder text-center'>Latest Books</h1>
-                        <hr />
+                        <h1 className='display-6 fw-bolder text-center' style={{fontFamily: "Oleo Script Swash Caps"}}>Latest Books</h1>
+                        <hr className='heading_hr'/>
                     </div>
                 </div>
 

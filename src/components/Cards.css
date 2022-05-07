@@ -1,12 +1,35 @@
-.cards {
-    padding: 4rem;
-    background: #fff;
+.cards_div {
+    padding: 1rem;
+    background: whitesmoke;
   }
 
 .container{
-  background: rgb(255 254 251);
+  background: whitesmoke;
+}
+
+.heading_div{
+  font-family: Roboto;
+  font-size: 200%;
+  font-weight: lighter;
+  color: #ff4244;
+}
+
+.heading_hr{
+  border: 0.5px solid #1d6d86;
+  width: 40%;
+  margin: auto;
 }
   
+.card_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: auto;
+  width: 90%;
+  padding: 1rem;
+
+}
+
   h1 {
     text-align: center;
   }
@@ -19,6 +42,18 @@
 
   .btn{
     margin: 5px;
+    padding: 10px;
+  }
+
+  .btn_cat{
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #1d6d86;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    background: #fe5a35;
+    color: azure;
   }
   
   .cards__container {
