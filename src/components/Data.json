@@ -15,14 +15,15 @@
     "writer": "Arthur Conan Doyle",
     "publisher": "George Newness",
     "detail": "This is a story that reveals the sinister plot of a greedy stepfather, Dr. Roylott, who kills one of his two stepdaughters and then attempts to kill the other. ",
-    "category": "best_seller"
-  },
-  {
-    "title": "The Book of Trees",
-    "cost": "$22.00",
-    "writer": "Craig Anderson",
-    "publisher": "Random House",
-    "detail": "",
     "category": "trending"
+  },
+  { 
+    "image_desc":"https://1.bp.blogspot.com/-qyknI_Sok8Y/X11_QV7xo2I/AAAAAAAAJj8/CDSzI5jc_PIFYnItBFc9ueo9IKhy_DmaACLcBGAsYHQ/s895/acetolkien.jpg",
+    "title": "The Lord of the Rings",
+    "cost": "$30.00",
+    "writer": "J.R.R. Tolkien",
+    "publisher": "Allen & Unwin",
+    "detail": "Frodo, a Christlike figure, learns that the ring has the power to control the entire world and, he discovers, to corrupt its owner. ",
+    "category": "best_seller"
   }
 ]
