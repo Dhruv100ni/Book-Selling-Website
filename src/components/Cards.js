@@ -22,9 +22,12 @@ const Cards = () => {
         console.log('Data: ', bookdata);
         const getProducts = async () => {
             setLoading(true);
-            const response = await fetch('');
+            const response = await fetch('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=SUu9Yx0vx40PgSoBA2TLBmpCf3LYVVwl');
             if (componentMounted) {
-                setData(await response.clone().json());
+                console.log('Component mounted');
+                const data = await response.json();
+                console.log('Data: ', data);
+                setData(data.results.books);
                 setFilter(await response.json());
                 setLoading(false);
                 console.log(filter);
@@ -38,9 +41,7 @@ const Cards = () => {
 
         getProducts();
     }, []);
-
     
-
     const Loading = () => {
         return (
             <>
@@ -82,107 +83,11 @@ const Cards = () => {
     }
 
     const ShowCards = () => {
-        if (Category === "all") {
-
         return (
-            <div className='card_container'>
-            
-                {
-                    bookdata.map(item => (
-                        
-                        <Card sx={{ maxWidth: 345 }} >
-                        {console.log(item)}
-                            
-                            <CardContent>
-                            <CardMedia
-                                component="img"
-                                alt="green iguana"
-                                height="140"
-                                style={{marginBottom: '10px'}}
-                                image={item.image_desc}
-                            />
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {item.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.cost}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.writer}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.publisher}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.detail}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small">Buy</Button>
-                                <Button size="small">Details</Button>
-                            </CardActions>
-                        </Card>
-                    ))
-                }
-                
-
-            </div>
-        ); }
-        else if (Category === "trending") {
-            return (
-                <div className='card_container'>
-                
-                    {
-                        bookdata.map(item => (
-                            
-                            item.category === "trending" && (
-                            <Card sx={{ maxWidth: 345 }} >
-                            {console.log(item)}
-                                
-                                <CardContent>
-                                <CardMedia
-                                    component="img"
-                                    alt="green iguana"
-                                    height="140"
-                                    style={{marginBottom: '10px'}}
-                                    image={item.image_desc}
-                                />
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {item.title}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {item.cost}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {item.writer}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {item.publisher}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {item.detail}
-                                    </Typography>
-                                </CardContent>
-                                <CardActions>
-                                    <Button size="small">Buy</Button>
-                                    <Button size="small">Details</Button>
-                                </CardActions>
-                            </Card>
-                        )
-                        ))
-                    }
-                    
-    
-                </div>
-            ); }
-            else if (Category === "best_seller") {
-                return (
                     <div className='card_container'>
-                    
                         {
-                            bookdata.map(item => (
+                            data.map(item => (
                                 
-                                item.category === "best_seller" && (
                                 <Card sx={{ maxWidth: 345 }} >
                                 {console.log(item)}
                                     
@@ -192,22 +97,22 @@ const Cards = () => {
                                         alt="green iguana"
                                         height="140"
                                         style={{marginBottom: '10px'}}
-                                        image={item.image_desc}
+                                        image={item.book_image}
                                     />
                                         <Typography gutterBottom variant="h5" component="div">
                                             {item.title}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {item.cost}
+                                            {item.price}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {item.writer}
+                                            {item.author}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
                                             {item.publisher}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {item.detail}
+                                            {item.description}
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
@@ -215,15 +120,158 @@ const Cards = () => {
                                         <Button size="small">Details</Button>
                                     </CardActions>
                                 </Card>
-                            )
                             ))
                         }
                         
         
                     </div>
-                ); }
-
+                );
     }
+
+
+    // const ShowCards = () => {
+    //     if (Category === "all") {
+
+    //     return (
+    //         <div className='card_container'>
+            
+    //             {
+    //                 bookdata.map(item => (
+                        
+    //                     <Card sx={{ maxWidth: 345 }} >
+    //                     {console.log(item)}
+                            
+    //                         <CardContent>
+    //                         <CardMedia
+    //                             component="img"
+    //                             alt="green iguana"
+    //                             height="140"
+    //                             style={{marginBottom: '10px'}}
+    //                             image={item.image_desc}
+    //                         />
+    //                             <Typography gutterBottom variant="h5" component="div">
+    //                                 {item.title}
+    //                             </Typography>
+    //                             <Typography variant="body2" color="text.secondary">
+    //                                 {item.cost}
+    //                             </Typography>
+    //                             <Typography variant="body2" color="text.secondary">
+    //                                 {item.writer}
+    //                             </Typography>
+    //                             <Typography variant="body2" color="text.secondary">
+    //                                 {item.publisher}
+    //                             </Typography>
+    //                             <Typography variant="body2" color="text.secondary">
+    //                                 {item.detail}
+    //                             </Typography>
+    //                         </CardContent>
+    //                         <CardActions>
+    //                             <Button size="small">Buy</Button>
+    //                             <Button size="small">Details</Button>
+    //                         </CardActions>
+    //                     </Card>
+    //                 ))
+    //             }
+                
+
+    //         </div>
+    //     ); }
+    //     else if (Category === "trending") {
+    //         return (
+    //             <div className='card_container'>
+                
+    //                 {
+    //                     bookdata.map(item => (
+                            
+    //                         item.category === "trending" && (
+    //                         <Card sx={{ maxWidth: 345 }} >
+    //                         {console.log(item)}
+                                
+    //                             <CardContent>
+    //                             <CardMedia
+    //                                 component="img"
+    //                                 alt="green iguana"
+    //                                 height="140"
+    //                                 style={{marginBottom: '10px'}}
+    //                                 image={item.image_desc}
+    //                             />
+    //                                 <Typography gutterBottom variant="h5" component="div">
+    //                                     {item.title}
+    //                                 </Typography>
+    //                                 <Typography variant="body2" color="text.secondary">
+    //                                     {item.cost}
+    //                                 </Typography>
+    //                                 <Typography variant="body2" color="text.secondary">
+    //                                     {item.writer}
+    //                                 </Typography>
+    //                                 <Typography variant="body2" color="text.secondary">
+    //                                     {item.publisher}
+    //                                 </Typography>
+    //                                 <Typography variant="body2" color="text.secondary">
+    //                                     {item.detail}
+    //                                 </Typography>
+    //                             </CardContent>
+    //                             <CardActions>
+    //                                 <Button size="small">Buy</Button>
+    //                                 <Button size="small">Details</Button>
+    //                             </CardActions>
+    //                         </Card>
+    //                     )
+    //                     ))
+    //                 }
+                    
+    
+    //             </div>
+    //         ); }
+    //         else if (Category === "best_seller") {
+    //             return (
+    //                 <div className='card_container'>
+                    
+    //                     {
+    //                         bookdata.map(item => (
+                                
+    //                             item.category === "best_seller" && (
+    //                             <Card sx={{ maxWidth: 345 }} >
+    //                             {console.log(item)}
+                                    
+    //                                 <CardContent>
+    //                                 <CardMedia
+    //                                     component="img"
+    //                                     alt="green iguana"
+    //                                     height="140"
+    //                                     style={{marginBottom: '10px'}}
+    //                                     image={item.image_desc}
+    //                                 />
+    //                                     <Typography gutterBottom variant="h5" component="div">
+    //                                         {item.title}
+    //                                     </Typography>
+    //                                     <Typography variant="body2" color="text.secondary">
+    //                                         {item.cost}
+    //                                     </Typography>
+    //                                     <Typography variant="body2" color="text.secondary">
+    //                                         {item.writer}
+    //                                     </Typography>
+    //                                     <Typography variant="body2" color="text.secondary">
+    //                                         {item.publisher}
+    //                                     </Typography>
+    //                                     <Typography variant="body2" color="text.secondary">
+    //                                         {item.detail}
+    //                                     </Typography>
+    //                                 </CardContent>
+    //                                 <CardActions>
+    //                                     <Button size="small">Buy</Button>
+    //                                     <Button size="small">Details</Button>
+    //                                 </CardActions>
+    //                             </Card>
+    //                         )
+    //                         ))
+    //                     }
+                        
+        
+    //                 </div>
+    //             ); }
+
+    // }
 
     // const ShowCards = () => {
     //     bookdata.map(
