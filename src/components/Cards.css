@@ -14,10 +14,18 @@
   color: #ff4244;
 }
 
-.heading_hr{
+.heading_hr1{
   border: 0.5px solid #1d6d86;
   width: 40%;
   margin: auto;
+  margin-bottom: 3px;
+}
+
+.heading_hr2{
+  border: 0.5px solid #1d6d86;
+  width: 30%;
+  margin: auto;
+  margin-bottom: 3px;
 }
   
 .card_container{

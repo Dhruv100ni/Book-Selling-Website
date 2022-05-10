@@ -242,7 +242,8 @@ const Cards = () => {
                 <div className="heading_div">
                     <div className="col-12 mb-5">
                         <h1 className='display-6 fw-bolder text-center' style={{fontFamily: "Oleo Script Swash Caps"}}>Latest Books</h1>
-                        <hr className='heading_hr'/>
+                        <hr className='heading_hr1'/>
+                        <hr className='heading_hr2'/>
                     </div>
                 </div>
 

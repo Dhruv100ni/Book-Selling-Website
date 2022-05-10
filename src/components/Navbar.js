@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import {  } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faTimes, faBook} from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes, faBook, faCartShopping} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Signup from './Signup.js'
+import { color } from '@mui/system';
 
 
 
@@ -83,6 +84,7 @@ function Navbar() {
               window.location.href = './signup'
             }
           }>SIGN UP</Button>}
+          <FontAwesomeIcon className='cart_icon' icon={faCartShopping} />
 
           
         </div>
