@@ -8,7 +8,7 @@ import FAQs from './components/FAQs';
 import Shopping_Cart from './components/Shopping_Cart';
 import Wish_List from './components/Wish_List';
 import My_Account from './components/My_Account';
-import Contac from './components/Contac';
+import Contact from './components/Contac';
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 
@@ -41,7 +41,7 @@ function App() {
         }
 
         {
-          <Route exact path="/contact" component={Contac} />
+          <Route exact path="/Contac" component={Contact} />
         }
 
         {
