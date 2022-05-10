@@ -25,5 +25,32 @@
     "publisher": "Allen & Unwin",
     "detail": "Frodo, a Christlike figure, learns that the ring has the power to control the entire world and, he discovers, to corrupt its owner. ",
     "category": "best_seller"
+  },
+  { 
+    "image_desc":"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1618329605l/56597885.jpg",
+    "title": "Beautiful World, Where Are You",
+    "cost": "$17.00",
+    "writer": "Sally Rooney",
+    "publisher": "Farrar, Straus and Giroux",
+    "detail": "Alice, a novelist, meets Felix, who works in a warehouse, and asks him if he’d like to travel to Rome with her. In Dublin, her best friend, Eileen, is getting over a break-up and slips back into flirting with Simon, a man she has known since childhood. Alice, Felix, Eileen, and Simon are still young—but life is catching up with them. They desire each other, they delude each other, they get together, they break apart. They have sex, they worry about sex, they worry about their friendships and the world they live in. Are they standing in the last lighted room before the darkness, bearing witness to something? Will they find a way to believe in a beautiful world?",
+    "category": "best_seller"
+  },
+  { 
+    "image_desc":"https://images-na.ssl-images-amazon.com/images/I/81p23fIPIGL.jpg",
+    "title": "The Proposal",
+    "cost": "$12.00",
+    "writer": "Jasmine Guillory",
+    "publisher": "Berkley Books",
+    "detail": "When freelance writer Nikole Paterson goes to a Dodgers game with her actor boyfriend, his man bun, and his bros, the last thing she expects is a scoreboard proposal. Saying no isn't the hard part--they've only been dating for five months, and he can't even spell her name correctly. The hard part is having to face a stadium full of disappointed fans... At the game with his sister, Carlos Ibarra comes to Nik's rescue and rushes her away from a camera crew. He's even there for her when the video goes viral and Nik's social media blows up--in a bad way. Nik knows that in the wilds of LA, a handsome doctor like Carlos can't be looking for anything serious, so she embarks on an epic rebound with him, filled with food, fun, and fantastic sex. But when their glorified hookups start breaking the rules, one of them has to be smart enough to put on the brakes...",
+    "category": null
+  },
+  { 
+    "image_desc":"https://images-na.ssl-images-amazon.com/images/I/81p23fIPIGL.jpg",
+    "title": "Don’t Laugh, It wll Only Encourage Her",
+    "cost": "$12.00",
+    "writer": "Jasmine Guillory",
+    "publisher": "Berkley Books",
+    "detail": "When freelance writer Nikole Paterson goes to a Dodgers game with her actor boyfriend, his man bun, and his bros, the last thing she expects is a scoreboard proposal. Saying no isn't the hard part--they've only been dating for five months, and he can't even spell her name correctly. The hard part is having to face a stadium full of disappointed fans... At the game with his sister, Carlos Ibarra comes to Nik's rescue and rushes her away from a camera crew. He's even there for her when the video goes viral and Nik's social media blows up--in a bad way. Nik knows that in the wilds of LA, a handsome doctor like Carlos can't be looking for anything serious, so she embarks on an epic rebound with him, filled with food, fun, and fantastic sex. But when their glorified hookups start breaking the rules, one of them has to be smart enough to put on the brakes...",
+    "category": null
   }
 ]
