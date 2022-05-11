@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../App.css'
 import { Button } from './Button'
 import './HeroSection.css'
@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faCirclePlay, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 function HeroSection() {
+  const [button, setButton] = useState(true);
   return (
     <div className='hero-container'>
         <video autoPlay loop muted controls>
@@ -19,11 +20,11 @@ function HeroSection() {
                 GET STARTED
                 
             </Button>
-
-            <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>
-                SHOP NOW <FontAwesomeIcon icon={faArrowAltCircleRight} />
-                
-            </Button>
+            {button && <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large' onClick={
+            () => {
+              window.location.href = './Products'
+            }
+          }>SHOP NOW <FontAwesomeIcon icon={faArrowAltCircleRight} /></Button>}
 
 
         </div>

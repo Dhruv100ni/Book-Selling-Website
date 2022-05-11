@@ -8,7 +8,8 @@ import { faBars, faTimes, faBook, faCartShopping} from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Products from './pages/Products';
 import Signup from './Signup.js'
-import { color } from '@mui/system';
+import { color} from '@mui/system';
+import { IconButton } from '@mui/material';
 
 
 
@@ -92,7 +93,8 @@ function Navbar() {
               window.location.href = './signup'
             }
           }>SIGN UP</Button>}
-          <FontAwesomeIcon className='cart_icon' icon={faCartShopping} />
+          <IconButton><FontAwesomeIcon className='cart_icon' icon={faCartShopping} /></IconButton>
+          {/* <FontAwesomeIcon className='cart_icon' icon={faCartShopping} /> */}
           
 
           
