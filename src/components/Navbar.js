@@ -6,7 +6,7 @@ import {  } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faBars, faTimes, faBook, faCartShopping} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import Products from './pages/Products';
 import Signup from './Signup.js'
 import { color } from '@mui/system';
 
@@ -61,7 +61,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/products'
+                to='/Products'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -93,6 +93,7 @@ function Navbar() {
             }
           }>SIGN UP</Button>}
           <FontAwesomeIcon className='cart_icon' icon={faCartShopping} />
+          
 
           
         </div>

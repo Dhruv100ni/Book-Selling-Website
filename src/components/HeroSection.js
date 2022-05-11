@@ -4,7 +4,7 @@ import { Button } from './Button'
 import './HeroSection.css'
 import video from '../videos/video2.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faCirclePlay } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faCirclePlay, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 function HeroSection() {
   return (
@@ -21,7 +21,7 @@ function HeroSection() {
             </Button>
 
             <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>
-                WATCH TRAILER <FontAwesomeIcon icon={faCirclePlay} />
+                SHOP NOW <FontAwesomeIcon icon={faArrowAltCircleRight} />
                 
             </Button>
 

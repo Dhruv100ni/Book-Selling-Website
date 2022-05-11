@@ -11,6 +11,7 @@ import My_Account from './components/My_Account';
 import Contact from './components/Contac';
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
+import Products from './components/pages/Products';
 
 function App() {
   return (
@@ -58,6 +59,10 @@ function App() {
 
         {
           <Route exact path="/MyAccount" component={My_Account} />
+        }
+
+        {
+          <Route exact path="/Products" component={Products} />
         }
 
         {
