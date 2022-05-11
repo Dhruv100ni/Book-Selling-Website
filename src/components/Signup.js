@@ -21,10 +21,10 @@ const Signup = () => {
         if (EmailValidator.validate(email)) {
             createUserWithEmailAndPassword(getAuth (), email, password).then(cred => {
                 console.log(cred);
-                Alert("Account Created Successfully");
+                alert("Account Created Successfully");
             }).catch(error => {
                 console.log(error);
-                Alert("Account Creation Failed");
+                alert("Account Creation Failed");
             })
         }
         else{
