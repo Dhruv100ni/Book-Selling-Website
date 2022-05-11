@@ -8,6 +8,7 @@ import './Signup.css';
 import * as EmailValidator from 'email-validator';
 import { getAuth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Alert } from 'bootstrap';
  
 
 const Signup = () => {
@@ -18,10 +19,12 @@ const Signup = () => {
     const FSignup = () => {
         console.log(email, password);
         if (EmailValidator.validate(email)) {
-            createUserWithEmailAndPassword(email, password).then(cred => {
+            createUserWithEmailAndPassword(getAuth (), email, password).then(cred => {
                 console.log(cred);
+                Alert("Account Created Successfully");
             }).catch(error => {
                 console.log(error);
+                Alert("Account Creation Failed");
             })
         }
     }

@@ -1,13 +1,31 @@
-import React from 'react';
+import {React, useState} from 'react';
 import '../Images/img.jpg';
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import './Signup';
+import * as EmailValidator from 'email-validator';
+import { getAuth } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 const Login = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const FSignin = () => {
+        console.log(email, password);
+        if (EmailValidator.validate(email)) {
+            signInWithEmailAndPassword(getAuth (), email, password).then(cred => {
+                console.log(cred);
+                document.location.href = "/";
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+    }
     return(
         <div>
             <section className='sign-in'>
@@ -25,18 +43,20 @@ const Login = () => {
                                 <label htmlFor='email'>
                                     <i className="zmdi zmdi-email material-icons-name"></i>
                                 </label>
-                                <TextField id="standard-basic" label="Your Email" variant="standard" />
+                                <TextField id="standard-basic" label="Your Email" variant="standard"  onChange={e => setEmail(e.target.value)} />
                             </div>
 
                             <div className='form-group'>
                                 <label htmlFor='password'>
                                     <i className="zmdi zmdi-lock material-icons-name"></i>
                                 </label>
-                                <TextField id="standard-basic" label="Your Passowrd" variant="standard" />
+                                <TextField id="standard-basic" label="Your Passowrd" variant="standard" onChange={e => setPassword(e.target.value)} />
                             </div>  <br/>
 
                             <div className='form-group form-button'>
-                                <Button variant="contained">Sign In</Button>
+                                <Button variant="contained" onClick={FSignin}>Sign In</Button>
+                                
+                                
                             </div>
                            
                         </form>
