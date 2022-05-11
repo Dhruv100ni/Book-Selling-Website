@@ -27,6 +27,9 @@ const Signup = () => {
                 Alert("Account Creation Failed");
             })
         }
+        else{
+            console.log("Check Credentials");
+        }
     }
     return(
         <>
