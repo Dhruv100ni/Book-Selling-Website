@@ -1,12 +1,30 @@
-import React from 'react';
+import {React, useState} from 'react';
 import '../Images/img.jpg';
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import './Signup.css';
+import * as EmailValidator from 'email-validator';
+import { getAuth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+ 
 
 const Signup = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const FSignup = () => {
+        console.log(email, password);
+        if (EmailValidator.validate(email)) {
+            createUserWithEmailAndPassword(email, password).then(cred => {
+                console.log(cred);
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+    }
     return(
         <>
         <section className='signup'>
@@ -30,7 +48,7 @@ const Signup = () => {
                                 <label htmlFor='email'>
                                     <i className="zmdi zmdi-email material-icons-name"></i>
                                 </label>
-                                <TextField id="standard-basic" label="Your Email" variant="standard" />
+                                <TextField id="standard-basic" label="Your Email" variant="standard" onChange={e => setEmail(e.target.value)} />
                             </div>
 
                             <div className='form-group'>
@@ -51,7 +69,7 @@ const Signup = () => {
                                 <label htmlFor='password'>
                                     <i className="zmdi zmdi-lock material-icons-name"></i>
                                 </label>
-                                <TextField id="standard-basic" label="Your Passowrd" variant="standard" />
+                                <TextField id="standard-basic" label="Your Passowrd" variant="standard" onChange={e => setPassword(e.target.value)}/>
                             </div> 
 
                             <div className='form-group'>
@@ -62,7 +80,7 @@ const Signup = () => {
                             </div> <br/>
 
                             <div className='form-group form-button'>
-                                <Button variant="contained">Register</Button>
+                                <Button variant="contained" onClick={FSignup}>Register</Button>
                             </div>
 
                             <h4 className='register_to_login'>Already have an account? <NavLink to = "./Login" className = "login-image-link">Log In</NavLink></h4>
