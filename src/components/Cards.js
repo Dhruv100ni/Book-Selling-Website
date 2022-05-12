@@ -118,6 +118,7 @@ const Cards = () => {
                                     <CardActions>
                                         <Button size="small">Buy</Button>
                                         <Button size="small">Details</Button>
+                                        <Button size="small">Add To Cart</Button>
                                     </CardActions>
                                 </Card>
                             ))
